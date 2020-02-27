@@ -8,7 +8,10 @@ namespace BackStageCore3.Models
 {
     public class DbModel : DbContext
     {
-        public DbSet<alltestitem> Alltestitem { set; get; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<alltestitem> alltestitem { set; get; }
     
      
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -32,8 +32,29 @@ namespace BackStageCore3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
 
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("any", builder =>
+                {
+                    //builder.AllowAnyOrigin() //允许任何来源的主机访问
+                    builder
+
+                        .WithOrigins("http://*.*.*.*")//.SetIsOriginAllowedToAllowWildcardSubdomains()//设置允许访问的域
+
+                        .AllowAnyMethod()
+
+                        .AllowAnyHeader()
+
+                        .AllowCredentials();//
+
+                });
+
+            });
+
+            services.AddControllers();
+            
             //注册swagger
             services.AddSwaggerGen(c =>
                 {
@@ -55,6 +76,8 @@ namespace BackStageCore3
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware<CorsMiddleware>();//跨域
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

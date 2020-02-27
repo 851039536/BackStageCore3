@@ -7,9 +7,9 @@ namespace BackStageCore3.Models
         // <summary>
         /// 机型
         /// </summary>
-        [Key]
-        public string 机型 { get; set; }
+        public int  id { get; set; }
 
+        public string 机型 { get; set; }
         /// <summary>
         /// 测试项目
         /// </summary>

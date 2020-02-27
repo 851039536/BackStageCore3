@@ -4,7 +4,7 @@
         <name>BackStageCore3</name>
     </assembly>
     <members>
-        <member name="M:BackStageCore3.Controllers.AlltestitemController.Getalltestitem">
+        <member name="M:BackStageCore3.Controllers.AlltestitemController.Get">
             <summary>
             查询所有
             </summary>
@@ -24,7 +24,7 @@
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:BackStageCore3.Controllers.AlltestitemController.Put(System.String,BackStageCore3.Models.alltestitem)">
+        <member name="M:BackStageCore3.Controllers.AlltestitemController.Put(System.Int32,BackStageCore3.Models.alltestitem)">
             <summary>
             按条件更新数据
             </summary>
@@ -39,7 +39,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:BackStageCore3.Models.alltestitem.机型" -->
+        <!-- Badly formed XML comment ignored for member "P:BackStageCore3.Models.alltestitem.id" -->
         <member name="P:BackStageCore3.Models.alltestitem.测试项目">
             <summary>
             测试项目
@@ -63,6 +63,11 @@
         <member name="P:BackStageCore3.Models.alltestitem.编号">
             <summary>
             编号
+            </summary>
+        </member>
+        <member name="P:BackStageCore3.Models.DbModel.alltestitem">
+            <summary>
+            
             </summary>
         </member>
     </members>

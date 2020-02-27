@@ -9,7 +9,7 @@ namespace BackStageCore3.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AlltestitemController : ControllerBase
     {
         private readonly DbModel _coreDbContext;
@@ -25,9 +25,9 @@ namespace BackStageCore3.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<alltestitem>>> Getalltestitem()
+        public async Task<ActionResult<IEnumerable<alltestitem>>> Get()
         {
-            return await _coreDbContext.Alltestitem.ToListAsync();
+            return await _coreDbContext.alltestitem.ToListAsync();
         }
 
         /// <summary>
@@ -35,10 +35,12 @@ namespace BackStageCore3.Controllers
         /// </summary>
         /// <param name="id">条件</param>
         /// <returns>返回text</returns>
-        [HttpGet("{id}", Name = "Getgj")]
-        public List<alltestitem> Get(string id)
+        [HttpGet("{机型}", Name = "机型")]
+        public List<alltestitem> Get(string 机型)
         {
-            return _coreDbContext.Set<alltestitem>().Where(b => b.机型 == id).ToList();
+           return _coreDbContext.Set<alltestitem>().Where(b => b.机型== 机型).ToList();
+
+
         }
 
 
@@ -51,10 +53,10 @@ namespace BackStageCore3.Controllers
         [HttpPost]
         public async Task<ActionResult<alltestitem>> Post(alltestitem gjs)
         {
-            _coreDbContext.Alltestitem.Add(gjs);
+            _coreDbContext.alltestitem.Add(gjs);
             await _coreDbContext.SaveChangesAsync();
             //CreatedAtAction(actionName,routeValues,value).
-            return CreatedAtAction(nameof(Get), new { id = gjs.机型 }, gjs);
+            return CreatedAtAction(nameof(Get), new { id = gjs.id }, gjs);
         }
 
 
@@ -66,9 +68,9 @@ namespace BackStageCore3.Controllers
         /// <returns></returns>
         // PUT: api/Gj/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, alltestitem item)
+        public async Task<IActionResult> Put(int id, alltestitem item)
         {
-            if (id != item.机型)
+            if (id != item.id)
             {
                 return BadRequest();
             }
@@ -86,12 +88,12 @@ namespace BackStageCore3.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var todoItem = await _coreDbContext.Alltestitem.FindAsync(id);
+            var todoItem = await _coreDbContext.alltestitem.FindAsync(id);
             if (todoItem == null)
             {
                 return NotFound();
             }
-            _coreDbContext.Alltestitem.Remove(todoItem);
+            _coreDbContext.alltestitem.Remove(todoItem);
             await _coreDbContext.SaveChangesAsync();
             return NoContent();
         }

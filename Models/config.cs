@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace BackStageCore3.Models
     public class config
     {
 
+        [Key]
         public int id { get; set; }
         public string ConfigText { get; set; }
         public string Player { get; set; }
@@ -20,6 +22,8 @@ namespace BackStageCore3.Models
         public  string DVID { get; set; }
         public string DPID { get; set; }
         public int barcode { get; set; }
+
+       
         public int count { get; set; }
 
     }

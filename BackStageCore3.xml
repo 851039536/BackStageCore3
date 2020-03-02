@@ -14,14 +14,13 @@
             <summary>
             查询type类型下的内容
             </summary>
-            <param name="id">条件</param>
+            <param name="机型">条件</param>
             <returns>返回text</returns>
         </member>
         <member name="M:BackStageCore3.Controllers.AlltestitemController.Post(BackStageCore3.Models.alltestitem)">
             <summary>
             添加数据
             </summary>
-            <param name="item"></param>
             <returns></returns>
         </member>
         <member name="M:BackStageCore3.Controllers.AlltestitemController.Put(System.Int32,BackStageCore3.Models.alltestitem)">
@@ -39,6 +38,39 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:BackStageCore3.Controllers.ConfigController.Get">
+            <summary>
+            查询所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.ConfigController.Get(System.String)">
+            <summary>
+            查询type类型下的内容
+            </summary>
+            <returns>返回text</returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.ConfigController.Post(BackStageCore3.Models.config)">
+            <summary>
+            添加数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.ConfigController.Put(System.Int32,BackStageCore3.Models.config)">
+            <summary>
+            按条件更新数据
+            </summary>
+            <param name="id"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.ConfigController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:BackStageCore3.Controllers.TestitemControllers.Get">
             <summary>
             查询所有
@@ -49,14 +81,12 @@
             <summary>
             查询type类型下的内容
             </summary>
-            <param name="id">条件</param>
             <returns>返回text</returns>
         </member>
         <member name="M:BackStageCore3.Controllers.TestitemControllers.Post(BackStageCore3.Models.testitem)">
             <summary>
             添加数据
             </summary>
-            <param name="item"></param>
             <returns></returns>
         </member>
         <member name="M:BackStageCore3.Controllers.TestitemControllers.Put(System.Int32,BackStageCore3.Models.testitem)">
@@ -68,6 +98,39 @@
             <returns></returns>
         </member>
         <member name="M:BackStageCore3.Controllers.TestitemControllers.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.UserControllers.Get">
+            <summary>
+            查询所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.UserControllers.Get(System.String)">
+            <summary>
+            查询type类型下的内容
+            </summary>
+            <returns>返回text</returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.UserControllers.Post(BackStageCore3.Models.user)">
+            <summary>
+            添加数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.UserControllers.Put(System.Int32,BackStageCore3.Models.user)">
+            <summary>
+            按条件更新数据
+            </summary>
+            <param name="id"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BackStageCore3.Controllers.UserControllers.Delete(System.Int32)">
             <summary>
             删除
             </summary>

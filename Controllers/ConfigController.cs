@@ -1,7 +1,6 @@
 ﻿using BackStageCore3.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,12 +32,11 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 查询type类型下的内容
         /// </summary>
-        /// <param name="id">条件</param>
         /// <returns>返回text</returns>
-        [HttpGet("{机型}", Name = "机型")]
-        public List<config> Get(string 机型)
+        [HttpGet("{机型}", Name = "机型12")]
+        public List<config> Get(string ConfigText)
         {
-            return _coreDbContext.Set<config>().Where(b => b.ConfigText == 机型).ToList();
+            return _coreDbContext.Set<config>().Where(b => b.ConfigText == ConfigText).ToList();
 
 
         }
@@ -47,7 +45,6 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 添加数据
         /// </summary>
-        /// <param name="item"></param>
         /// <returns></returns>
         // POST: api/Gj
         [HttpPost]
@@ -88,12 +85,12 @@ namespace BackStageCore3.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var todoItem = await _coreDbContext.alltestitem.FindAsync(id);
+            var todoItem = await _coreDbContext.config.FindAsync(id);
             if (todoItem == null)
             {
                 return NotFound();
             }
-            _coreDbContext.alltestitem.Remove(todoItem);
+            _coreDbContext.config.Remove(todoItem);
             await _coreDbContext.SaveChangesAsync();
             return NoContent();
         }

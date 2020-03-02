@@ -34,9 +34,8 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 查询type类型下的内容
         /// </summary>
-        /// <param name="id">条件</param>
         /// <returns>返回text</returns>
-        [HttpGet("{机型}", Name = "机型")]
+        [HttpGet("{机型}", Name = "机型2")]
         public List<user> Get(string 机型)
         {
             return _coreDbContext.Set<user>().Where(b => b.用户 == 机型).ToList();
@@ -48,7 +47,6 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 添加数据
         /// </summary>
-        /// <param name="item"></param>
         /// <returns></returns>
         // POST: api/Gj
         [HttpPost]

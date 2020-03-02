@@ -33,7 +33,7 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 查询type类型下的内容
         /// </summary>
-        /// <param name="id">条件</param>
+        /// <param name="机型">条件</param>
         /// <returns>返回text</returns>
         [HttpGet("{机型}", Name = "机型")]
         public List<alltestitem> Get(string 机型)
@@ -47,7 +47,6 @@ namespace BackStageCore3.Controllers
         /// <summary>
         /// 添加数据
         /// </summary>
-        /// <param name="item"></param>
         /// <returns></returns>
         // POST: api/Gj
         [HttpPost]

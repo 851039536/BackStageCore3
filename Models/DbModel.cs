@@ -14,6 +14,10 @@ namespace BackStageCore3.Models
         public DbSet<alltestitem> alltestitem { set; get; }
         public DbSet<testitem> testitem { set; get; }
 
+        public DbSet<config> config { set; get; }
+
+        public DbSet<user> user { set; get; }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //    => optionsBuilder.UseMySQL(@"Server=localhost;database=testapp;uid=root;pwd=woshishui");
         public DbModel(DbContextOptions<DbModel> options) : base(options)
